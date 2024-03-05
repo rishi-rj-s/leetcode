@@ -3,16 +3,17 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-    let f = 0;
-    for(let i=0;i<nums.length;i++){
-        f=0;
-        for(j=0;j<nums.length;j++){
-            if(nums[i]===nums[j]){
-                f+=1;
+    let result;
+    nums.forEach(num => {
+        let count = 0;
+        nums.forEach(innerNum => {
+            if (num === innerNum) {
+                count++;
             }
+        });
+        if (count === 1) {
+            result = num;
         }
-        if(f==1){
-            return nums[i]
-        }
-    }
+    });
+    return result;
 };
