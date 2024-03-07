@@ -1,9 +1,10 @@
-var middleNode = function(head) {
-    let slow = head;
-    let fast = head;
-    while (fast !== null && fast.next !== null) {
-        slow = slow.next;
-        fast = fast.next.next;
+var middleNode = function (head) {
+    let array = [];
+    let length = 0;
+    while (head !== null) {
+        array.push(head);
+        head = head.next;
+        length++;
     }
-    return slow;
+    return array.at(length / 2)
 };
