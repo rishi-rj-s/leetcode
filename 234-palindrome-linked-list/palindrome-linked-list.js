@@ -10,16 +10,19 @@
  * @return {boolean}
  */
 var isPalindrome = function(head) {
-    const listVals = [];
-    while (head) {
-        listVals.push(head.val);
-        head = head.next;
-    }
     
-    let left = 0, right = listVals.length - 1;
-    while (left < right && listVals[left] === listVals[right]) {
-        left++;
-        right--;
+    let string1=""
+    let string2=""
+    let node=head
+    
+    while(node!=null){
+        
+        string1=`${string1}${node.val}`
+        string2=`${node.val}${string2}`
+       
+        node=node.next
     }
-    return left >= right;
+
+return string1===string2
+    
 };
